@@ -32,6 +32,9 @@ Object.keys(config.Pools).map(function (key) {
       };
       return new AWS.CognitoIdentityServiceProvider.CognitoUser(userData);
     },
+    IdentityProvider: new AWS.CognitoIdentityServiceProvider({
+      region: Region
+    }),
     TokenValidator: new Validator({
       region: Region,
       cognitoUserPoolId: UserPoolId,
